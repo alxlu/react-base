@@ -1,17 +1,16 @@
 import { createStore, applyMiddleware } from 'redux';
-import createSagaMiddleware from 'redux-saga';
+import { createEpicMiddleware } from 'redux-observable';
 import { routerMiddleware } from 'react-router-redux';
 import createReducer from '../reducers';
-import sagas from '../sagas';
+import rootEpic from '../epics';
 
-const sagaMiddleware = createSagaMiddleware();
+const epicMiddleware = createEpicMiddleware(rootEpic);
 
 const createEnhancer = browserHistory => (
-  applyMiddleware(routerMiddleware(browserHistory), sagaMiddleware)
+  applyMiddleware(routerMiddleware(browserHistory), epicMiddleware)
 );
 
 export default function configureStore(initialState, browserHistory) {
   const store = createStore(createReducer(), initialState, createEnhancer(browserHistory));
-  sagaMiddleware.run(sagas);
   return store;
 }

@@ -43,7 +43,9 @@ const options = (() => {
 })();
 
 export default {
-  entry: [join(__dirname, 'src/index.js')],
+  entry: [
+    join(__dirname, 'src/index.js'),
+  ],
 
   module: {
     loaders: [{
