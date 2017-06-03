@@ -1,0 +1,30 @@
+exports[`containers component rendering <App /> renders correctly 1`] = `
+<div>
+  <h1>
+    App Homepage
+  </h1>
+  <a
+    onClick={[Function]}
+    style={Object {}}>
+    Home
+  </a>
+  <a
+    onClick={[Function]}
+    style={Object {}}>
+    Foo
+  </a>
+  <div />
+</div>
+`;
+
+exports[`containers component rendering <Home /> renders correctly 1`] = `
+<div>
+  Home
+</div>
+`;
+
+exports[`containers component rendering <TestPage /> renders correctly 1`] = `
+<div>
+  Test
+</div>
+`;
