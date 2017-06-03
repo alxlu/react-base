@@ -9,6 +9,7 @@
     "start": "webpack-dev-server --history-api-fallback --content-base src/ --open --hot --inline --host 0.0.0.0",
     "build": "cross-env NODE_ENV=production webpack",
     "lint": "eslint src/",
+    "pretest": "npm run lint",
     "test": "jest",
     "coverage": "npm test -- --coverage"
   },
