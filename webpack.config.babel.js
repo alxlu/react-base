@@ -61,6 +61,7 @@ export default {
   plugins: [
     new webpack.LoaderOptionsPlugin({
       options: {
+        context: __dirname,
         postcss: {
           plugins: [
             require('lost'),
