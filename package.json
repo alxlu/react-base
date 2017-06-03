@@ -29,7 +29,7 @@
     "extract-text-webpack-plugin": "beta",
     "flow-typed": "^2.0.0",
     "html-webpack-plugin": "^2.24.1",
-    "jest": "^18.0.0",
+    "jest": "^20.0.4",
     "lost": "^7.1.1",
     "postcss-cssnext": "^2.9.0",
     "postcss-loader": "^1.2.1",

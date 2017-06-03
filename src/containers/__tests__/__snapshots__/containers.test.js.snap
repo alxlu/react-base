@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`containers component rendering <App /> renders correctly 1`] = `
 <div>
   <h1>
@@ -5,12 +7,14 @@ exports[`containers component rendering <App /> renders correctly 1`] = `
   </h1>
   <a
     onClick={[Function]}
-    style={Object {}}>
+    style={Object {}}
+  >
     Home
   </a>
   <a
     onClick={[Function]}
-    style={Object {}}>
+    style={Object {}}
+  >
     Foo
   </a>
   <div />
