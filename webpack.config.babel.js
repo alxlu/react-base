@@ -39,6 +39,7 @@ export const setOptions = (prod) => {
     cssLoaders: 'style-loader!css-loader?modules&importLoaders=1!postcss-loader',
     plugins: [],
     performance: { hints: false },
+    devtool: 'source-map',
   };
 };
 
@@ -82,6 +83,7 @@ export const createConfig = options => ({
     filename: 'index.js',
   },
 
+  devtool: options.devtool,
   performance: options.performance,
 });
 
