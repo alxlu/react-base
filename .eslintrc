@@ -1,7 +1,6 @@
 {
-  "extends": "airbnb",
+  "extends": "eslint-config-airbnb",
   "parser": "babel-eslint",
-  "plugins": ["react", "jsx-a11y", "flowtype"],
   "rules": {
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true, "optionalDependencies": false, "peerDependencies": false }],
     "no-void": 0,
