@@ -7,8 +7,8 @@ import webpack from 'webpack';
 
 const babelrc = JSON.parse(readFileSync(join(__dirname, '.babelrc')));
 
-const options = (() => {
-  if (process.env.NODE_ENV === 'production') {
+export const setOptions = (prod) => {
+  if (process.env.NODE_ENV === 'production' || prod) {
     return {
       cssLoaders: ExtractTextPlugin.extract({
         loader: 'css-loader?modules&importLoaders=1!postcss-loader',
@@ -40,9 +40,9 @@ const options = (() => {
     plugins: [],
     performance: { hints: false },
   };
-})();
+};
 
-export default {
+export const createConfig = options => ({
   entry: [join(__dirname, 'src/index.js')],
 
   module: {
@@ -83,4 +83,6 @@ export default {
   },
 
   performance: options.performance,
-};
+});
+
+export default createConfig(setOptions());
