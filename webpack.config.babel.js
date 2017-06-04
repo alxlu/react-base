@@ -10,10 +10,12 @@ const babelrc = JSON.parse(readFileSync(join(__dirname, '.babelrc')));
 export const setOptions = (prod) => {
   if (process.env.NODE_ENV === 'production' || prod) {
     return {
-      cssLoaders: ExtractTextPlugin.extract({
-        loader: 'css-loader?modules&importLoaders=1!postcss-loader',
-        fallbackLoader: 'style-loader',
-      }),
+      css: {
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader?modules&importLoaders=1!postcss-loader',
+        }),
+      },
       plugins: [
         new webpack.DefinePlugin({
           'process.env': {
@@ -30,13 +32,13 @@ export const setOptions = (prod) => {
             drop_console: true,
           },
         }),
-        new ExtractTextPlugin('[name].css'),
+        new ExtractTextPlugin({ filename: '[name].css' }),
       ],
       performance: { hints: 'warning' },
     };
   }
   return {
-    cssLoaders: 'style-loader!css-loader?modules&importLoaders=1!postcss-loader',
+    css: { loader: 'style-loader!css-loader?modules&importLoaders=1!postcss-loader' },
     plugins: [],
     performance: { hints: false },
     devtool: 'source-map',
@@ -55,7 +57,7 @@ export const createConfig = options => ({
     }, {
       test: /\.css$/,
       exclude: /node_modules/,
-      loader: options.cssLoaders,
+      ...options.css,
     }],
   },
 
