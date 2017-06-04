@@ -10,11 +10,11 @@ const distpath = join(__dirname, '../dist');
 const expectedOutput = ['index.html', 'index.js'];
 
 describe('webpack build', () => {
-  beforeAll(() => {
-    del([`${distpath}/**`]);
+  beforeAll((done) => {
+    del([`${distpath}/**`]).then(done);
   });
-  afterEach(() => {
-    del([`${distpath}/**`]);
+  afterEach((done) => {
+    del([`${distpath}/**`]).then(done);
   });
 
   it('builds dev setup successfully', (done) => {
