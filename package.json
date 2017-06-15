@@ -9,6 +9,8 @@
     "start": "webpack-dev-server --history-api-fallback --content-base src/ --open --hot --inline --host 0.0.0.0",
     "build": "cross-env NODE_ENV=production webpack",
     "lint": "eslint src/",
+    "format": "prettier --write --single-quote --trailing-comma=all --print-width=100 \"src/**/*.js\" && eslint src --fix",
+    "rdxh": "rdxh --single-quote --trailing-comma=all --print-width=100",
     "pretest": "npm run lint",
     "test": "jest",
     "coverage": "npm test -- --coverage",
@@ -37,6 +39,7 @@
     "postcss-cssnext": "^2.9.0",
     "postcss-loader": "^2.0.5",
     "postcss-reporter": "^4.0.0",
+    "prettier": "^1.4.4",
     "react-test-renderer": "^15.5.4",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
@@ -53,6 +56,7 @@
     "react-router": "3.0.5",
     "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
+    "redux-boilerplate-helpers": "^0.0.3",
     "redux-saga": "^0.15.3"
   },
   "jest": {
