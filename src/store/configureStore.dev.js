@@ -10,14 +10,15 @@ const sagaMiddleware = createSagaMiddleware();
 
 function getDebugSessionKey() {
   const matches = window.location.href.match(/[?&]debug_session=([^&#]+)\b/);
-  return (matches && matches.length > 0) ? matches[1] : null;
+  return matches && matches.length > 0 ? matches[1] : null;
 }
 
-const createEnhancer = browserHistory => compose(
-  applyMiddleware(routerMiddleware(browserHistory), sagaMiddleware),
-  DevTools.instrument(),
-  persistState(getDebugSessionKey()),
-);
+const createEnhancer = browserHistory =>
+  compose(
+    applyMiddleware(routerMiddleware(browserHistory), sagaMiddleware),
+    DevTools.instrument(),
+    persistState(getDebugSessionKey()),
+  );
 
 export default function configureStore(initialState, browserHistory) {
   const store = createStore(createReducer(), initialState, createEnhancer(browserHistory));
