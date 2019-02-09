@@ -38,7 +38,7 @@
     "flow-typed": "^2.0.0",
     "html-webpack-plugin": "^2.24.1",
     "jest": "^20.0.4",
-    "lost": "^8.0.0",
+    "lost": "8.3.0",
     "postcss-cssnext": "^3.0.0",
     "postcss-loader": "^2.0.5",
     "postcss-reporter": "^4.0.0",
