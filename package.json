@@ -60,7 +60,7 @@
     "react-test-renderer": "^16.0.0",
     "redux": "^3.6.0",
     "redux-boilerplate-helpers": "^0.0.3",
-    "redux-saga": "^0.15.3"
+    "redux-saga": "^1.1.1"
   },
   "jest": {
     "moduleDirectories": [
