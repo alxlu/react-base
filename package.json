@@ -57,7 +57,7 @@
     "react-redux": "^5.0.1",
     "react-router": "3.0.5",
     "react-router-redux": "^4.0.7",
-    "react-test-renderer": "^16.0.0",
+    "react-test-renderer": "^16.10.0",
     "redux": "^3.6.0",
     "redux-boilerplate-helpers": "^0.0.3",
     "redux-saga": "^0.15.3"
